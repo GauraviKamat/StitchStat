@@ -1,5 +1,5 @@
 // js/customer.js
-
+console.log("customer.js loaded");
 // ---------- GLOBAL ----------
 const params = new URLSearchParams(window.location.search);
 const customerId = params.get("id");
