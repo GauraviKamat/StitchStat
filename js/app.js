@@ -84,5 +84,14 @@ function goBack() {
   history.back();
 }
 
+window.addEventListener("load", async () => {
+  await initApp(); // fetch data, auth check, etc.
+
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("app").style.display = "block";
+});
+
+async function initApp() {
+  loadCustomers();
+}
 // ---------- INIT ----------
-loadCustomers();
