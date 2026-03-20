@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Customer - StitchStat</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <button class="back-btn" onclick="goBack()">⬅</button>
+        
+        <div class="header-title">
+        <h1>StitchStat</h1>
+        <p>Add Customer</p>
+        </div>
+        
+    </header>
+
+<div class="container">
+
+<form id="customerForm">
+
+<label>Name</label>
+<input type="text" id="name" required>
+
+<label>Phone Number</label>
+<input type="tel" id="phone" required>
+
+<label>Notes</label>
+<textarea id="notes"></textarea>
+
+<button type="submit" class="add-btn">
+Save Customer
+</button>
+
+</form>
+
+</div>
+
+
+<nav class="bottom-nav">
+
+<button onclick="goHome()">🏠 Home</button>
+        
+<button onclick="goAddCustomer()">➕ Add</button>
+               
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/app.js"></script>
+<script src="js/customer.js"></script>
+
+</body>
+</html>

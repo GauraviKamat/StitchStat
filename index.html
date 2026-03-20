@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StitchStat</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+<div class="header-title">
+<h1>StitchStat</h1>
+<p>Tailor Customer Manager</p>
+</div>
+</header>
+
+
+<div class="container">
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search customer...">
+</div>
+
+<button class="add-btn" onclick="location.href='add-customer.html'">
++ Add Customer
+</button>
+
+
+<div class="customers">
+
+<div class="customers" id="customerList">
+<button id="editCustomerBtn">✏️ Edit</button>
+<button id="deleteCustomerBtn">🗑 Delete</button>
+</div>
+
+</div>
+
+</div>
+
+
+<nav class="bottom-nav">
+
+        <button onclick="goHome()">🏠 Home</button>
+        
+        <button onclick="goAddCustomer()">➕ Add</button>
+        
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/app.js" defer></script>
+
+</body>
+</html>

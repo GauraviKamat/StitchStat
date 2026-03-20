@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Profile</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <button class="back-btn" onclick="goBack()">⬅</button>
+  <div class="header-title">
+    <h1>StitchStat</h1>
+    <p>Customer</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="customer-info-card">
+    <h2 id="custName"></h2>
+    <p id="custPhone"></p>
+    <p id="custNotes"></p>
+
+    <button id="whatsappBtn">💬 WhatsApp</button>
+    <div class="customer-actions">
+        <button id="editCustomerBtn" class="btn edit">✏️ Edit</button>
+        <button id="deleteCustomerBtn" class="btn delete">🗑 Delete</button>
+      </div>
+  </div>
+
+  <h2>Add Measurements</h2>
+
+  <div class="measurement-buttons">
+    <button onclick="openMeasurement('top')">+ Top</button>
+    <button onclick="openMeasurement('blouse')">+ Blouse</button>
+    <button onclick="openMeasurement('pant')">+ Pant</button>
+  </div>
+
+  <h2>Measurement History</h2>
+  <div id="history" class="customers"></div>
+   
+  <h2>Work</h2>
+
+  <button class="add-btn" onclick="openWorkModal()">+ Add Work</button>
+
+  <div id="workList" class="customers"></div>
+</div>
+
+<!-- Measurement Modal -->
+<div class="modal" id="measurementModal">
+  <div class="modal-content">
+    <button id="closeModalBtn">Cancel</button>
+    <h2 id="measurementTitle"></h2>
+
+    <form id="measurementForm">
+      <div id="measurementFields"></div>
+      <button type="submit" class="add-btn">Save</button>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ Edit Customer Modal -->
+<div class="modal" id="editCustomerModal">
+  <div class="modal-content modern-modal">
+
+    <div class="modal-header">
+      <h2>Edit Customer</h2>
+      <button class="close-btn" onclick="closeEditCustomer()">✖</button>
+    </div>
+
+    <div class="modal-body">
+      <label>Name</label>
+      <input type="text" id="editName">
+
+      <label>Phone</label>
+      <input type="text" id="editPhone">
+
+      <label>Notes</label>
+      <textarea id="editNotes"></textarea>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn save" id="updateCustomerBtn">Save</button>
+      <button class="btn cancel" onclick="closeEditCustomer()">Cancel</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal" id="workModal">
+  <div class="modal-content modern-modal">
+
+    <div class="modal-header">
+      <h2>Add Work</h2>
+      <button class="close-btn" onclick="closeWorkModal()">✖</button>
+    </div>
+
+    <div class="modal-body">
+      <label>Cloth Image</label>
+      <input type="file" id="clothImage">
+
+      <label>Design Image</label>
+      <input type="file" id="designImage">
+
+      <label>Notes</label>
+      <textarea id="workNotes"></textarea>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn save" id="saveWorkBtn">Save</button>
+      <button class="btn cancel" onclick="closeWorkModal()">Cancel</button>
+    </div>
+
+  </div>
+</div>
+
+
+<nav class="bottom-nav">
+  <button onclick="goHome()">🏠 Home</button>
+  <button onclick="goAddCustomer()">➕ Add</button>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/app.js"></script>
+<script src="js/customer.js" defer></script>
+
+</body>
+</html>
