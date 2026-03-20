@@ -2,13 +2,6 @@
 
 let allCustomers = [];
 
-window.addEventListener("load", async () => {
-  await initApp(); // fetch data, auth check, etc.
-
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("app").style.display = "block";
-});
-
 // ---------- LOAD CUSTOMERS ----------
 async function loadCustomers() {
   const container = document.getElementById("customerList");
@@ -91,8 +84,5 @@ function goBack() {
   history.back();
 }
 
-
-async function initApp() {
-  loadCustomers();
-}
 // ---------- INIT ----------
+loadCustomers();
