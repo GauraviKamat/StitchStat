@@ -7,6 +7,8 @@ async function loadCustomers() {
   const container = document.getElementById("customerList");
   if (!container) return;
 
+  container.style.display = "none"; // hide before load
+  
   const { data, error } = await db
     .from("customers")
     .select("*")
@@ -19,6 +21,7 @@ async function loadCustomers() {
 
   allCustomers = data;
   renderCustomers(allCustomers);
+  container.style.display = "block"; // show AFTER render
 }
 
 // ---------- RENDER ----------
