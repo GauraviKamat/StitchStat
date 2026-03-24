@@ -21,6 +21,7 @@ async function loadCustomers() {
 
   allCustomers = data;
   renderCustomers(allCustomers);
+  container.style.display = "block"; // show AFTER render
 }
 
 // ---------- RENDER ----------
